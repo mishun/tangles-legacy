@@ -2,7 +2,7 @@
 CPP := g++
 CPPFLAGS := -Wall -pipe -std=c++0x -O2
 LNKFLAGS := -Wl,--enable-auto-import -Wl,--stack=67108864 -O2
-LIBS := -lopengl32 -lglu32 -lglut32
+#LIBS := -lopengl32 -lglu32 -lglut32
 
 BinDirectory := bin
 ObjDirectory := obj
@@ -12,7 +12,7 @@ dFileFromSrc = $(addprefix $(ObjDirectory)/, $(patsubst %.cpp, %.d, $(1)))
 binExePath = $(addprefix $(BinDirectory)/, $(addsuffix .exe, $(1)))
 binSrcPath = $(addsuffix .cpp, $(1))
 
-binList := main TangleGenerator CDGenerator virtual incremental draw3D
+binList := main TangleGenerator CDGenerator virtual incremental
 
 .PHONY: all
 all: $(call binExePath, $(binList))
@@ -31,15 +31,17 @@ include Graph/Graph.mk
 include Tangles/Tangles.mk
 include Topology/Topology.mk
 include Util/Util.mk
-include OpenGL/OpenGL.mk
+#include OpenGL/OpenGL.mk
 include Virtual/Virtual.mk
 
 -include $(call dFileFromSrc, $(srcList) $(call binSrcPath, $(binList)))
 
 $(ObjDirectory)/%.o: %.cpp
+	mkdir -p $(dir $@)
 	$(CPP) $(CPPFLAGS) -MMD -I $(CURDIR) -c $< -o $@
 
 $(BinDirectory)/%.exe: $(call oFileFromSrc, $(srcList) %.cpp)
+	mkdir -p $(dir $@)
 	$(CPP) $^ -o $@ $(LIBS) $(LNKFLAGS)
 
 .PHONY: clean
