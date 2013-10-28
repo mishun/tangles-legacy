@@ -40,7 +40,7 @@ namespace Tangles
 		size_t getCutpoints() const;
 
 	private:
-		size_t __fastcall dfsCP(size_t, size_t &, size_t & , size_t[]) const;
+		size_t dfsCP(size_t, size_t &, size_t & , size_t[]) const;
 
 	public:
 		std::vector<Vertex> v;

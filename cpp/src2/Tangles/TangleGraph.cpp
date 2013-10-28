@@ -250,7 +250,7 @@ size_t TangleGraph::getCutpoints() const
 	return cutpoint;
 }
 
-size_t __fastcall TangleGraph::dfsCP(size_t v, size_t & timer, size_t & cutpoint, size_t tin[]) const
+size_t TangleGraph::dfsCP(size_t v, size_t & timer, size_t & cutpoint, size_t tin[]) const
 {
 	size_t fup = tin[v] = timer++;
 	size_t children = 0;

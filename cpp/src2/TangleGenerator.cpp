@@ -2,7 +2,7 @@
 #include <Tangles/AlternatingTanglesGenerator.h>
 #include <Tangles/TangleProjectionsGenerator.h>
 #include <Tangles/TangleTemplatesGenerator.h>
-#include <Graph/psprinter.h>
+#include <Graph/PSPrinter.h>
 
 Graph::PSPrinter ps("output.ps");
 

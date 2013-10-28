@@ -370,7 +370,7 @@ RootCode TangleWithRootCode::calcSymmetryCode(D4Group g) const
 	return RootCode(2 * subtangles(), rcode.get());
 }
 
-std::pair<size_t, bool> __fastcall TangleWithRootCode::dfsCP(size_t v, size_t & timer, size_t & cutpoint, size_t tin[]) const
+std::pair<size_t, bool> TangleWithRootCode::dfsCP(size_t v, size_t & timer, size_t & cutpoint, size_t tin[]) const
 {
 	size_t fup = tin[v] = timer++;
 	bool border_accessible = false;

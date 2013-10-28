@@ -43,7 +43,7 @@ namespace Tangles
 		virtual bool postCheck(size_t legsToGlue);
 
 	private:
-		DfsResult __fastcall dfs(size_t, size_t, size_t &, size_t &, size_t[]) const;
+		DfsResult dfs(size_t, size_t, size_t &, size_t &, size_t[]) const;
 		size_t fastCode(size_t) const;
 		size_t fastDirectionMask(size_t) const;
 		int tryRootCode(size_t[], Dart, int) const;

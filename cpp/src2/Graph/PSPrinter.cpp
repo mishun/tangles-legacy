@@ -1,5 +1,5 @@
 #include <fstream>
-#include "psprinter.h"
+#include "PSPrinter.h"
 
 using namespace Graph;
 using Geometry::Vector2D;

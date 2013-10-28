@@ -85,7 +85,7 @@ namespace Tangles
 		int tryRootCode(size_t[], size_t, size_t, int) const;
 		int compareRootCode(const size_t[], size_t, size_t, int) const;
 		RootCode calcSymmetryCode(D4Group) const;
-		std::pair<size_t, bool> __fastcall dfsCP(size_t, size_t &, size_t &, size_t[]) const;
+		std::pair<size_t, bool> dfsCP(size_t, size_t &, size_t &, size_t[]) const;
 
 	private:
 		mutable RootCode rcode;

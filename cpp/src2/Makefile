@@ -1,7 +1,8 @@
 
 CPP := g++
 CPPFLAGS := -Wall -pipe -std=c++0x -O2
-LNKFLAGS := -Wl,--enable-auto-import -Wl,--stack=67108864 -O2
+LNKFLAGS := 
+#-Wl,--enable-auto-import -Wl,--stack=67108864 -O2
 #LIBS := -lopengl32 -lglu32 -lglut32
 
 BinDirectory := bin
